@@ -9,6 +9,7 @@
   --white-background: #ffffff;
   --light-background: #f4f4fd;
   --accent: #e7e9fc;
+  --success: #31d0aa;
 }
 
 body {
@@ -105,6 +106,18 @@ img {
   list-style: none;
 }
 
+.studio::after {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: var(--pressed-state);
+  border-radius: 2px;
+  width: 100%;
+}
+
 .header-address-list {
   display: flex;
   gap: 40px;
@@ -119,6 +132,7 @@ img {
   padding: 24px 0;
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .header-menu-link:hover,
@@ -285,6 +299,8 @@ img {
   background-color: var(--white-background);
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-info {
@@ -298,6 +314,7 @@ img {
 
 .team-text {
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .team-soc {
@@ -317,6 +334,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-soc-link:hover span {
+  background-color: var(--pressed-state);
 }
 /************************* FOOTER *************************/
 
@@ -376,11 +398,26 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-soc-link:hover span {
+  background-color: var(--success);
+}
 /************************* Portfolio *************************/
 
 /************************* SECTION 1 *************************/
+.portfolio::after {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: var(--pressed-state);
+  border-radius: 2px;
+  width: 66px;
+}
 
 .menu {
   padding-top: 96px;
